@@ -2,7 +2,7 @@
 
 local Config = {
     WindowName = "I love Fishing Simulator <3",
-    Color = Color3.fromRGB(182,41,243),
+    Color = Color3.fromRGB(45,45,239),
     Keybind = Enum.KeyCode.RightControl
 }
 
@@ -146,7 +146,7 @@ end)
 
 
 
-Section1:CreateLabel("Farming")
+Section1:CreateLabel("EN:Farming,VN:Cày")
 
 local Toggle6 = Section1:CreateToggle("Auto Kill", nil, function(State)
     shared.toggle = State
