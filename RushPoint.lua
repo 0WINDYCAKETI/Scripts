@@ -253,9 +253,9 @@ MainTabs.Toggle({
 })
 
 MainTabs.Button({
-    Text = "Boost FPS[ComingSoon]"
+    Text = "Boost FPS[ComingSoon]",
     Callback = function(v)
-	    _G.Settings = {
+        _G.Settings = {
             Players = {
                 ["Ignore Me"] = false, -- Ignore your Character
                 ["Ignore Others"] = false-- Ignore other Characters
