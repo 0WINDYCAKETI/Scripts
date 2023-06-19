@@ -1,5 +1,3 @@
-
-
 if not _G.Ignore then
     _G.Ignore = {}
 end
