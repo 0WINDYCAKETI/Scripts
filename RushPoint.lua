@@ -253,7 +253,7 @@ MainTabs.Toggle({
 })
 
 MainTabs.Button({
-    Text = "Boost FPS[ComingSoon]",
+    Text = "Boost FPS",
     Callback = function(v)
         _G.Settings = {
             Players = {
