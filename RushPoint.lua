@@ -151,14 +151,11 @@ end)
 if not ESP then
     getgenv().ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/noobscripter38493/kiriot-esp/main/ESP.lua"))()
 
-    ESP.Tracers = true
-    ESP.Boxes = false
-    ESP.Thickness = 1
-    ESP:Toggle(true)
-
     local TeamColor = Color3.fromRGB(5, 150, 20)
     local EnemyColor = Color3.fromRGB(255, 0, 0)
 
+    ESP.Thickness = 1
+	
     local function AddPlayerToESP(Player)
         if Player.Name ~= plr.Name and Player:FindFirstChild("HumanoidRootPart") then
             if IsOnTeam(Players[Player.Name]) then
@@ -192,6 +189,35 @@ local Main = WatermelonLib.Load({
 
 local MainTabs = Main.New({
     Title = "Main"
+})
+
+local EpsTabs = Main.New({
+    Title = "ESP"
+})
+
+EpsTabs.Toggle({
+    Text = "Esp (Using With box Or tracers)"	
+    Enabled = false,
+    Callback = function(v)
+    	ESP.Thickness = 1
+    	ESP:Toggle(true)
+    end
+})
+
+EpsTabs.Toggle({
+    Text = "Box"	
+    Enabled = false,
+    Callback = function(v)
+    	ESP.Boxes = false
+    end
+})
+
+EpsTabs.Toggle({
+    Text = "Tracers"	
+    Enabled = false,
+    Callback = function(v)
+	ESP.Tracers = true
+    end
 })
 
 MainTabs.Button({
