@@ -151,11 +151,14 @@ end)
 if not ESP then
     getgenv().ESP = loadstring(game:HttpGet("https://raw.githubusercontent.com/noobscripter38493/kiriot-esp/main/ESP.lua"))()
 
+    ESP.Tracers = true
+    ESP.Boxes = false
+    ESP.Thickness = 1
+    ESP:Toggle(true)
+
     local TeamColor = Color3.fromRGB(5, 150, 20)
     local EnemyColor = Color3.fromRGB(255, 0, 0)
 
-    ESP.Thickness = 1
-	
     local function AddPlayerToESP(Player)
         if Player.Name ~= plr.Name and Player:FindFirstChild("HumanoidRootPart") then
             if IsOnTeam(Players[Player.Name]) then
@@ -191,41 +194,12 @@ local MainTabs = Main.New({
     Title = "Main"
 })
 
-local EpsTabs = Main.New({
-    Title = "ESP"
-})
-
-EpsTabs.Toggle({
-    Text = "Esp (Using With box Or tracers)"	
-    Enabled = false,
-    Callback = function(v)
-    	ESP.Thickness = 1
-    	ESP:Toggle(true)
-    end
-})
-
-EpsTabs.Toggle({
-    Text = "Box"	
-    Enabled = false,
-    Callback = function(v)
-    	ESP.Boxes = false
-    end
-})
-
-EpsTabs.Toggle({
-    Text = "Tracers"	
-    Enabled = false,
-    Callback = function(v)
-	ESP.Tracers = true
-    end
-})
-
 MainTabs.Button({
-    Text = "Boost FPS",
+    Text = "Boost FPS"
     Callback = function(v)
         _G.Settings = {
             Players = {
-                ["Ignore Me"] = false, -- Ignore your Character
+                ["Ignore Me"] = true, -- Ignore your Character
                 ["Ignore Others"] = false-- Ignore other Characters
             },
             Meshes = {
@@ -246,9 +220,9 @@ MainTabs.Button({
             ["Low Rendering"] = true, -- Lower Rendering
             ["Low Quality Parts"] = true -- Lower quality parts
         }
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/0WINDYCAKETI/Scripts/main/RushPointBoostFps.lua"))()
+        loadstring(game:HttpGet("https://github.com/0WINDYCAKETI/Scripts/blob/main/RushPointBoostFps.lua"))()
     end
-	})
+})
 
 MainTabs.Toggle({
     Text = "Silent Aim",
